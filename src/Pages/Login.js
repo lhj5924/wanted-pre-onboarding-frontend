@@ -4,7 +4,7 @@ import PageContainer from '../Components/Common/PageContainer';
 import { postUserData } from '../API/api';
 import Redirect from '../Components/Common/Redirect';
 
-export default function Login() {
+export function Login() {
   Redirect();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

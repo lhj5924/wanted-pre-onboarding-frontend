@@ -1,10 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { styled, createGlobalStyle } from 'styled-components';
 
-import Main from './Pages/Main.js';
-import Signup from './Pages/Signup';
-import Login from './Pages/Login';
-import Todo from './Pages/Todo';
+import { Main, Signup, Login, Todo } from './Pages';
 
 function App() {
   return (
@@ -77,7 +74,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-ol, ul {
+ol, ul, li {
 	list-style: none;
 }
 a {

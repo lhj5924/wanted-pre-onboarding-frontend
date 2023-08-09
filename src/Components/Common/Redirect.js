@@ -17,5 +17,9 @@ export default function Redirect() {
       alert('이미 로그인된 사용자입니다. 투두 페이지로 이동합니다.');
       navigate('/todo');
     }
+    if (!isLogin && locPath === '/todo') {
+      alert('먼저 로그인을 해주세요. 로그인 페이지로 이동합니다.');
+      navigate('/signin');
+    }
   }, []);
 }

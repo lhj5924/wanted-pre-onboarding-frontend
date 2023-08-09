@@ -30,7 +30,7 @@ export function Todo() {
     <>
       <PageContainer>
         <TodoListBox className="TodoListBox">
-          <TodoEach />
+          <TodoEach newTodoList={newTodoList} />
         </TodoListBox>
         <form>
           <input

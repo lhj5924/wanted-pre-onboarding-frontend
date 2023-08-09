@@ -1,16 +1,23 @@
-import { useState } from 'react';
-import { getTodo } from '../../API/api';
+import { useEffect, useState } from 'react';
+import { getTodo, updateTodo } from '../../API/api';
 import { styled } from 'styled-components';
+import CheckBox from '../Common/CheckBox';
+import DeleteBtn from '../Common/DeleteBtn';
 
-export function TodoEach() {
-  const [todoList, setTodoList] = useState([]);
+export function TodoEach({ newTodoList }) {
+  const [todoList, setTodoList] = useState(newTodoList);
 
   // 할일 목록 가져오기
-  getTodo('/todos')
-    .then((res) => {
-      setTodoList(res.data);
-    })
-    .catch((err) => console.log(err));
+  useEffect(() => {
+    getTodo('/todos')
+      .then((res) => {
+        setTodoList(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, [todoList]);
+
+  //     Assignment 7
+  // TODO의 체크박스를 통해 완료 여부를 수정할 수 있도록 해주세요.
 
   return (
     <>
@@ -19,8 +26,9 @@ export function TodoEach() {
           todoList.map((todo) => (
             <StyledLI key={todo.id}>
               <label>
-                <input type="checkbox" checked={todo.isCompleted} />
-                <Todo>{todo.todo}</Todo>
+                <CheckBox todo={todo} />
+                <StyledTodo>{todo.todo}</StyledTodo>
+                <DeleteBtn todo={todo} />
               </label>
             </StyledLI>
           ))}
@@ -39,7 +47,7 @@ const StyledUL = styled.ul`
 const StyledLI = styled.li`
   background-color: lavender;
 `;
-const Todo = styled.div`
+const StyledTodo = styled.div`
   width: auto;
   height: 30px;
   background-color: lightblue;

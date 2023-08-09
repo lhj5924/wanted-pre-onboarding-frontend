@@ -5,7 +5,7 @@ import PageContainer from '../Components/Common/PageContainer';
 import { postUserData } from '../API/api';
 import Redirect from '../Components/Common/Redirect';
 
-export default function Signup() {
+export function Signup() {
   Redirect();
   //   Assignment 1
   // 회원가입과 로그인 페이지에 이메일과 비밀번호의 유효성 검사기능을 구현해주세요
