@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import { updateTodo } from '../../API/api';
 import styled from 'styled-components';
 
-const CheckInput = styled.input`
-  width: 1.5rem;
-`;
-
 function CheckBox({ todo }) {
   // 체크 버튼
   const [isChecked, setIsChecked] = useState(todo.isCompleted);
@@ -30,4 +26,8 @@ function CheckBox({ todo }) {
   );
 }
 
-export default CheckBox;
+const CheckInput = styled.input`
+  /* width: 1fr; */
+`;
+
+export { CheckBox };

@@ -12,4 +12,4 @@ const PageContainer = styled.div`
   justify-content: center;
 `;
 
-export default PageContainer;
+export {PageContainer};

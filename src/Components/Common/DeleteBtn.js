@@ -1,18 +1,6 @@
 import { React } from 'react';
 import { deleteTodo } from '../../API/api';
 import styled from 'styled-components';
-// 휴지통 아이콘 넣기
-
-const StyledDeleteBtn = styled.button`
-  width: 16px;
-  height: 16px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  color: ${(props) => (props.isMouseEnter ? 'red' : 'transparent')};
-`;
 
 function DeleteBtn({ todo }) {
   function handleOnClick() {
@@ -24,10 +12,14 @@ function DeleteBtn({ todo }) {
   }
 
   return (
-    <div>
-      <StyledDeleteBtn onClick={handleOnClick}></StyledDeleteBtn>
-    </div>
+    <>
+      <StyledDeleteBtn onClick={handleOnClick}>삭제</StyledDeleteBtn>
+    </>
   );
 }
 
-export default DeleteBtn;
+const StyledDeleteBtn = styled.button`
+  /* width: 1fr; */
+`;
+
+export { DeleteBtn };

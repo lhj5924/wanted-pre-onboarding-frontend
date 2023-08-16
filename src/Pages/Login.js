@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PageContainer from '../Components/Common/PageContainer';
 import { postUserData } from '../API/api';
-import Redirect from '../Components/Common/Redirect';
+import { PageContainer, Redirect } from '../Components/Common';
 
 export function Login() {
   Redirect();
